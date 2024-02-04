@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(9, 21, 63);
+  }
+.box{
+    background-color: rgb(210, 212, 219);
+
+}
+.registration {
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+    padding-top: 3% !important;
+    padding-bottom: 30px !important;
+    background-image: url(https://images.pexels.com/photos/3970396/pexels-photo-3970396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    color: white;
+}
+
+.text {
+    padding-left: 2%;
+    padding-top: 2%;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.text1 {
+    padding-left: 2%;
+    padding-top: 0.5%;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+.text2{
+    padding-left: 2%;
+    padding-top: 0.5%;
+    font-size: 15px;
+    text-align: center;
+}
+.button{
+    border-radius: 25px;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(11, 23, 151);
+    color: white;
+    margin-top: 15px;
+    margin-left: 250px;
+}
+.button1{
+    border-radius: 25px;
+    width: 35%;
+    height: 150%;
+    background-color: rgb(11, 23, 151);
+    color: white;
+    margin-top: 15px;
+    margin-left: 325px;
+}
+

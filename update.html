@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function updateAndRedirect() {
+            // Perform the update logic here (you can replace this with your actual update code)
+
+            // Show confirmation popup
+            var isUpdated = confirm("Successfully Updated. Do you want to go to the home page?");
+
+            // Redirect to the home page if the user clicks "OK" in the confirmation popup
+            if (isUpdated) {
+                window.location.href = "home.html"; // Replace "home.html" with your actual home page URL
+            }
+        }
+    </script>
+    <title>Information Update</title>
+    <style>
+        /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #588efa; /* Background color for the entire page */
+    background-image: url(https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=ais);
+    background-size: cover;
+}
+
+form {
+    opacity:  0.8; /* Transparency of the form itself */
+    max-width: 300px;
+    margin: auto;
+    display: grid;
+    gap: 7px;
+    background-color: #a7dbf4; /* Background color for the form */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the form */
+    box-shadow: 0 0 10px rgba(104, 102, 102, 0.582); /* Box shadow for a subtle effect */
+}
+
+.photo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #333333;
+}
+
+.photo-section input {
+    display: none;
+}
+
+label {
+    color: #333333; /* Text color for labels */
+}
+
+input {
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 12px;
+    border: 1px solid #1b25ea; /* Border color for input fields */
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+
+button {
+    background-color: #3896d1;  
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <form action="update.php" method="post" onsubmit="updateAndRedirect(); return false;">
+
+        <!-- Circular Photo Section -->
+        <div class="photo-section">
+            <input type="file" name="" accept="">
+             
+        </div>
+
+        <!-- Information Fields -->
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <!-- Update Button -->
+        <button type="submit">Update</button>
+
+    </form>
+
+</body>
+</html>

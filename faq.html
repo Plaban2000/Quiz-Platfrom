@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link href="home.css" rel="stylesheet"/>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+    rel="stylesheet"
+  />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  background-color: #d4cdcd;
+  color: #1e1f21;
+}
+
+h1{
+  margin: 50px 0 30px;
+  text-align: center;
+}
+
+.faq-container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq{
+  background-color: transparent;
+  border: 1px solid #2d4fd8;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s ease;
+}
+
+.faq.active{
+  background-color: #FFF8C9;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title{
+  margin: 0 35px 0 0;
+}
+
+.faq-text{
+  display: none;
+  margin: 30px 0 0;
+}
+
+.faq.active .faq-text{
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.chevron, .close{
+  width: 12px;
+  height:12px;
+}
+
+.faq-toggle .close{
+  display: none;
+} 
+
+.faq.active .faq-toggle .close{
+  display: block;
+}
+
+.faq.active .faq-toggle .chevron{
+  display: none;
+}
+
+.faq.active .faq-toggle{
+  background-color: #9fc6f1;
+  border-radius: 50%;
+  color:#ffffd9;
+}
+    </style>
+</head>
+<body>
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">ClassroomPrep</a>
+      <form class="d-flex" role="search" style="margin-left: 850px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Make Your Carrer Easier with ClassroomPrep</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="course.html">Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Leaderboard.html">Leaderboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Job</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="faq.html">FAQs</a>
+              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Settings
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                <li><a class="dropdown-item" href="#">Notification</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Personal Information</a></li>                 
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Security</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Help Center</a></li>                    
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Log Out
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <br>
+  <br>
+  
+    <h4 style="text-align: center;">Frequently Asked Questions</h4>
+    <div class='faq-container'>
+  <div class="faq">
+    <h3 class="faq-title">What is ClassroomPrep?</h3>
+    <p class="faq-text">It is an educational platform which gives opportunity to thousands of learner to compete with each other.</p>
+    <button class='faq-toggle'>
+      <svg class="chevron w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/> 
+  </svg>
+      
+      <svg class="close w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+  </svg>
+    </button>
+  </div>
+   <div class="faq">
+    <h3 class="faq-title">How to start a Quiz?</h3>
+    <p class="faq-text">There are different topics available for quizzes. You can select any of them as per your convenience.</p><br/>
+    <button class='faq-toggle'>
+      <svg class="chevron w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/> 
+  </svg>
+      
+      <svg class="close w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+  </svg>
+    </button>
+  </div>
+   <div class="faq ">
+    <h3 class="faq-title">What is the rule of play?</h3>
+    <p class="faq-text">Each person will be asked 10 questions of 1 marks each. They can skip it or can move next or previous.And at last he/she can submit the quiz. </p>
+    <button class='faq-toggle'>
+      <svg class="chevron w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/> 
+  </svg>
+      
+      <svg class="close w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+  </svg>
+    </button>
+  </div>
+   <div class="faq ">
+    <h3 class="faq-title">What is price of subscription?</h3>
+    <p class="faq-text">10$ for 1 year subscription.</p>
+    <button class='faq-toggle'>
+      <svg class="chevron w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/> 
+  </svg>
+      
+      <svg class="close w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+  </svg>
+    </button>
+  </div>
+   <div class="faq ">
+    <h3 class="faq-title">How to log-out from the account?</h3>
+    <p class="faq-text">By clicking on logout button you can close the account.</p>
+    <button class='faq-toggle'>
+      <svg class="chevron w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/> 
+  </svg>
+      
+      <svg class="close w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+  </svg>
+    </button>
+  </div>
+    </div>
+
+    <script>
+    const buttons = document.querySelectorAll('.faq-toggle');
+
+
+    buttons.forEach(button =>{
+    button.addEventListener('click', () =>{
+    button.parentNode.classList.toggle('active');
+  })
+})
+ 
+    </script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="color: black;text-align: center;">
+            Are you want to logout ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" style="background-color: whitesmoke;"><a href="OTP Verfication.html">yes</a> </button>
+            <button type="button" class="btn btn-primary" style="background-color: whitesmoke;"><a href="home.html">No</a> </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mainfooter" role="contentinfo">  
+      <div class="footer-middle">  
+      <div class="container">  
+        <div class="row">  
+          <div class="col-md-3 col-sm-6">  
+            <div class="footer-pad">  
+              <h4> Company</h4>  
+              <ul class="list-unstyled">  
+                <li> <a href="#"> </a> </li>  
+                <li> <a href="#">About us</a></li>  
+                <li> <a href="#"> Careers </a></li>  
+                <li> <a href="#">Privacy policy</a></li>  
+                <li> <a href="#">News and Updates</a></li>  
+                <li> <a href="faq.html">FAQs</a></li>  
+              </ul>  
+            </div>  
+          </div>  
+          <div class="col-md-3 col-sm-6">  
+            <div class="footer-pad">  
+              <h4> Popular Goals</h4>  
+              <ul class="list-unstyled">  
+                <li><a href="#"> BTech </a> </li>  
+                <li><a href="#">MTech</a> </li>  
+                <li><a href="#">BCA</a></li>  
+                <li><a href="#">MCA</a></li>  
+                <li><a href="#">GATE</a></li>  
+                <li><a href="#">JAM</a></li>  
+              </ul>  
+            </div>  
+          </div>  
+          <div class="col-md-3 col-sm-6">  
+            <div class="footer-pad">  
+              <h4> Contact us </h4>  
+              <ul class="list-unstyled">  
+                <li> <a href="#"> Customer Service </a> </li>  
+                <li> <a href="#"> Whatsapp </a> </li>  
+                <li> <a href="#">Website</a> </li>  
+                
+              </ul>  
+            </div>  
+          </div>  
+            <div class="col-md-3">  
+                <h4> Follow Us </h4>  
+                <ul class="social-network social-circle">  
+                 <li> <a href="#" class="icoFacebook" title="Facebook"> <i class="fa fa-facebook"> </i> </a> </li>  
+                 <li> <a href="#" class="icoLinkedin" title="Linkedin"> <i class="fa fa-linkedin"> </i> </a> </li>  
+        <li> <a href="#"> <i class="fa fa-youtube" aria-hidden="true"> </i> </a> </li>  
+                </ul>               
+        </div>  
+        </div>  
+        <div class="row">  
+        <div class="col-md-12 copy">  
+        <p class="text-center"> © Copyright 2021 - ClassroomPrep.  All rights reserved. </p>  
+        </div>  
+        </div>  
+      </div>  
+      </div>  
+    </footer>  
+
+</body>
+</html>

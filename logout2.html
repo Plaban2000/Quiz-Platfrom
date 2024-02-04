@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: rgb(222, 248, 248);
+        }
+
+        .confirmation-block {
+            display: none;
+            background-color: #8eacda;
+            padding: 40px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 100;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logout</h1>
+    <button id="logout-button">Logout</button>
+
+    <div class="confirmation-block">
+        <p>Are you sure you want to logout?</p>
+        <button id="confirm-logout">Yes, Logout</button>
+    </div>
+
+    <div class="notification">You have been logged out successfully!</div>
+
+    <script>
+        const logoutButton = document.getElementById("logout-button");
+        const confirmLogoutButton = document.getElementById("confirm-logout");
+        const confirmationBlock = document.querySelector(".confirmation-block");
+        const notification = document.querySelector(".notification");
+
+        logoutButton.addEventListener("click", () => {
+            confirmationBlock.style.display = "block";
+        });
+
+        confirmLogoutButton.addEventListener("click", () => {
+            // Replace "index.html" with the actual path to your home page
+            window.location.href = "index.html";
+            notification.style.display = "block";
+            setTimeout(() => {
+                notification.style.display = "none";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

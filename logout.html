@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Page</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .notification {
+            background-color: #5786c2;
+            color: rgb(20, 19, 19);
+            padding: 15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Message -->
+    <div id="notification" class="notification">Logout successful!</div>
+
+    <script>
+        // Function to show notification and redirect after a delay
+        function showNotificationAndRedirect() {
+            // Show the notification
+            document.getElementById('notification').style.display = 'block';
+
+            // Redirect after 3 seconds (adjust as needed)
+            setTimeout(function() {
+                window.location.href = 'home.html'; // Replace 'home.html' with your home page URL
+            }, 3000);
+        }
+
+        // Call the function on page load (simulate successful logout)
+        window.onload = showNotificationAndRedirect;
+    </script>
+
+</body>
+</html>
